@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #0a0a1a;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.main-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, 
+    rgba(10, 10, 26, 0.95) 0%,
+    rgba(20, 20, 40, 0.9) 30%,
+    rgba(30, 30, 60, 0.85) 70%,
+    rgba(10, 10, 26, 0.95) 100%),
+    radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.content-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero-section {
+  padding: 40px 20px;
+  margin-bottom: 40px;
+}
+
+.new-year-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(3.5rem, 10vw, 6rem);
+  background: linear-gradient(45deg, #FFD700, #FFA500, #FF6B6B, #FFD700);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 20px;
+  animation: gradientShift 8s ease infinite;
+  text-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.year-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(4rem, 12vw, 8rem);
+  font-weight: 800;
+  color: #FFD700;
+  margin: 20px 0;
+  text-shadow: 
+    0 0 30px rgba(255, 215, 0, 0.5),
+    0 0 60px rgba(255, 215, 0, 0.3),
+    0 0 90px rgba(255, 215, 0, 0.1);
+  position: relative;
+  display: inline-block;
+}
+
+.hero-subtitle {
+  font-family: 'Poppins', sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.3rem;
+  margin-top: 20px;
+}
+
+.wishes-section {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  padding: 40px 30px;
+  margin: 40px auto;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  max-width: 900px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wishes-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    #FFD700, 
+    transparent);
+}
+
+.wish-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  line-height: 1.8;
+  color: #f0f0f0;
+  text-align: center;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.wish-author {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: rgba(255, 215, 0, 0.8);
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 60px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.footer-small {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.footer-heart {
+  color: #FF6B6B;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 10px;
+  }
+  
+  .content-container {
+    padding: 10px;
+  }
+  
+  .hero-section {
+    padding: 30px 15px;
+  }
+  
+  .wishes-section {
+    padding: 30px 20px;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .new-year-text {
+    font-size: 2.8rem;
+  }
+  
+  .year-number {
+    font-size: 3.5rem;
+  }
+  
+  .wish-text {
+    font-size: 1.2rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #FFA500, #FFD700);
+}
